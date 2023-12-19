@@ -47,11 +47,30 @@ int toGrayScaleLuminosity(int r, int g, int b){
 }
 // sepia functions 1
 int toSepiaRed(int r, int g, int b){
-  int read=(0.393*r + 0.769*g + 0.189*b);
-  if(read>255){
+  int red=(0.393*r + 0.769*g + 0.189*b);
+  if(red>255){
     return 255;
   }
   else{ 
-    return round(read);
+    return round(red);
   } 
+}
+// sepia function 2
+int toSepiaGreen(int r, int g, int b){
+  int green =(0.349*r + 0.686*g + 0.168*b);
+  if(green>255){
+    return 255;
+  }
+  else{
+    return round(green);
+  }
+}
+int toSepiaBlue(int r, int g, int b){
+  int blue =(0.272*r + 0.534*g + 0.131*b);
+  if(blue>255){
+    return 255:
+  }
+  else{
+    return round(blue);
+  }
 }
