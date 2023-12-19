@@ -42,7 +42,16 @@ int toGrayScalelightness(int r, int g, int b){
 }
 // using luminosity technique
 int toGrayScaleLuminosity(int r, int g, int b){
-  int filter =(0.2*r + 0.72*g + 0.07*b);
+  int filter=(0.2*r + 0.72*g + 0.07*b);
   return round(filter);
 }
-
+// sepia functions 1
+int toSepiaRed(int r, int g, int b){
+  int read=(0.393*r + 0.769*g + 0.189*b);
+  if(read>255){
+    return 255;
+  }
+  else{ 
+    return round(read);
+  } 
+}
