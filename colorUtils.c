@@ -23,4 +23,26 @@ int toGrayScalelightness(int r, int g, int b){
   if(r>g && r>b){
     max = r;
   }
+  else if (g>r && g>b){
+    max = g;
+  }
+  else{
+    max = b;
+  }
+  if(r<g && r<b){
+    min = r;
+  }
+  else if(g<r && g<b){
+    min = g;
+  }
+  else{
+    min = b;
+  }
+  return (max + min)/2;
 }
+// using luminosity technique
+int toGrayScaleLuminosity(int r, int g, int b){
+  int filter =(0.2*r + 0.72*g + 0.07*b);
+  return round(filter);
+}
+
