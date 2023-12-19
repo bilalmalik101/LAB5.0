@@ -192,7 +192,54 @@ int main(int argc, char **argv) {
   //        min(), toGrayScaleLightness(), toGrayScaleLuminosity(),
   //        toSepiaRed(), toSepiaGreen(), toSepiaBlue()
   //       for at least 6 and a total of at least 20
+  x=10; y=25 ; z=15;
+  printf("Testing :min(%d,%d,%d)" ,x,y,z);
+  result = min(x,y,z);
+ if(result!=10){
+  printf("Failed: min returned %d,expected 10\n",result);
+  numFailed++;
 
+ }  
+ else{
+  printf("Passed\n");
+  numPassed++;
+ }
+ //Give value to check funtions
+ r =20;
+ g =40;
+ b =60;
+ printf("testing: toGrayScaleLightness(%d,%d,%d)",r,g,b);
+ result =toGrayScaleLightness(r,g,b);
+ if(result!=40){
+  printf("Failed: toGrayScaleLightness returned %d, Expected 40\n",result);
+  numFailed++;
+ } 
+ else{
+  printf("Passed\n");
+  numPassed++;
+ }
+ r=10;
+ g=30;
+ b=20;
+ printf("Testing: toGrayScaleLuminosity(%d,%d,%d): ,r,g,b");
+ result =toGrayScaleLuminosity(r,g,b);
+ if(result!=26){
+  printf("Failed: toGrayScaleLuminosity returned %d, expected 20\n",result);
+  numFailed++;
+ }
+else{
+  printf("Passed\n");
+  numPassed++;
+}
+r=55;
+g=25;
+b=10;
+printf("Testing: toSepiaRed(%d,%d,%d) " ,r,g,b);
+result= toSepiaRed(r,g,b);
+if(result!=43){
+  printf("Failed: toSepiaRed( ) returned %d, Expected 43\n",result);
+  numFailed++;
+}
   printf("Number Test Cases Passed: %6d\n", numPassed);
   printf("Number Test Cases Failed: %6d\n", numFailed);
   printf("Percent Passed:           %6.2f\n", 100.0 * numPassed / (numPassed + numFailed));
